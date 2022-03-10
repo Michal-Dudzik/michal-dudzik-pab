@@ -1,19 +1,36 @@
-import { report } from "process"
+"use strict";
+exports.__esModule = true;
+var express = require('express');
+var app = express();
+app.get('/', function (req, res) {
+    const num1: number = +req.query.num1;
+    const num2: number = +req.query.num2;
+    const operation: string = req.query.operation;
 
-const express = require('express')  
-const app = express()  
-app.get('/', function (req, res) {  
-  const num1 = +req.query.num1
-  const num2 = +req.query.num2
-  const operation = req.query.operation
-  res.send(operation.toString(add(num1,num2)))
-})  
-app.listen(3000)  
+    switch (operation) {
+        case "add":
+            res.send(add(num1, num2).toString())
+            break;
 
+        case "sub":
+            res.send(sub(num1, num2).toString())
+            break;    
+        
+        case "divide":
+            res.send(divide(num1, num2).toString())
+            break; 
+
+        case "multiply":
+            res.send(multiply(num1, num2).toString())
+            break; 
+    }
+    
+});
+app.listen(3000);
 
 //operacje matematyczne
-const add : Function = (num1: number, num2: number): number => num1 + num2;
-const sub : Function = (num1: number, num2: number): number => num1-num2;
-const divide : Function = (num1: number, num2: number): number => num1 / num2;
-const multiply : Function = (num1: number, num2: number): number => num1 * num2;
+function add(num1, num2) { return num1 + num2; };
+function sub(num1, num2) { return num1 - num2; };
+function divide(num1, num2) { return num1 / num2; };
+function multiply(num1, num2) { return num1 * num2; };
 
