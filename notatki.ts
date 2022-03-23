@@ -114,3 +114,24 @@ let jozio: Student;
 jozio._rokStudiów = 12
 
 
+////////////////////////////////// Lab3 //////////////////////////////////////
+
+// przykład wbudowanego w język generic types
+// const people: string[] = []
+// lub stary sposób: const people: Array<string> = []
+
+
+function mapElementsToObjects <ArrayItemType> (items: ArrayItemType)
+{
+    
+}
+
+
+
+
+//generic class
+class GenericNumber <NumberHolderType>{
+    zeroValue: NumberHolderType;
+    add: (x: NumberHolderType)
+}
+
