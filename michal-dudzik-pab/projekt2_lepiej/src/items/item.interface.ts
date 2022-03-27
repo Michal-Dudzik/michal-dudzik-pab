@@ -1,10 +1,18 @@
 export interface BaseItem{
-    name: string;
-    price: number;
-    description: string;
-    image: string;
+    id: number;
+    title: string;
+    content: string;
+    createDate?: string;
+    tags?: string[];
 }
 
 export interface Item extends BaseItem{
     id:number;
 }
+
+// tags interface
+export interface Tag {
+    id: number;
+    name: string;
+}
+

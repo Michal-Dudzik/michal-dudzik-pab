@@ -44,7 +44,7 @@ itemsRouter.get("/", async (req: Request, res: Response) => {
       res.status(500).send(e.message);
     }
   });
-  
+
   // POST items
   
   itemsRouter.post("/", async (req: Request, res: Response) => {
