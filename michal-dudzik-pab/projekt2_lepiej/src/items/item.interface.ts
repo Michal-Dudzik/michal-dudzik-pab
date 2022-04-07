@@ -10,9 +10,12 @@ export interface Item extends BaseItem{
     id:number;
 }
 
-// tags interface
-export interface Tag {
+// add tag interface    
+export interface BaseTag{
     id: number;
-    name: string;
+    name?: string;
 }
 
+export interface Tag extends BaseTag{
+    id:number;
+}

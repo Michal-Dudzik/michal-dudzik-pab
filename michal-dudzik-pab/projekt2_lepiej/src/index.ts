@@ -9,7 +9,7 @@ import { execArgv } from "process";
 import {itemsRouter} from "./items/items.router";
 import {errorHandler} from "./middleware/error.middleware";
 import {notFoundHandler} from "./middleware/not-found.middleware";
-
+import strictTransportSecurity from "helmet/dist/types/middlewares/strict-transport-security";
 
 dotenv.config();
 
@@ -35,6 +35,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/notes", itemsRouter);
 // app.use("/tags", tagsRouter);
+
 app.use(errorHandler);
 app.use(notFoundHandler);
 
@@ -46,3 +47,8 @@ app.listen(PORT, ()=>
 {
     console.log(`listening on port ${PORT}`);
 });
+
+
+
+
+
